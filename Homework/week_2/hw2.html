@@ -108,10 +108,45 @@ function loadxml(){
 		
 		//Draw graph frame
 		drawline(50, 0, 50, 450);
-		drawline(50, 450, 450, 450);
+		drawline(50, 450, 500, 450);
+		
+		//Draw little lines on vertical axis
+		for (i = 10; i < 460; i += 50){
+			drawline(40, i, 50, i);}
+			
+		//Draw little lines on horizontal axis
+		for (i = 50; i < 510; i += 37.5){
+			drawline(i, 450, i, 460);}
+
+		//Write months on horizontal axis. This code failed to load anything, could you please point out what is wrong?
+		//for (i = 50; i < 460; i += 37.5){
+			//for (j = 0; j < data.length - 1; j += 50){
+				//ctx.strokeText(data[j][1], 460, data[j+1][1], 460);}			
+		//}
+		ctx.strokeText('Nov 17', 50, 470);
+		ctx.strokeText('Dec', 87.5, 470);
+		ctx.strokeText('Jan 18', 125, 470);
+		ctx.strokeText('Feb', 162.5, 470);
+		ctx.strokeText('Mar', 200, 470);
+		ctx.strokeText('Apr', 237.5, 470);
+		ctx.strokeText('May', 275, 470);
+		ctx.strokeText('Jun', 312.5, 470);
+		ctx.strokeText('Jul', 350, 470);
+		ctx.strokeText('Aug', 387.5, 470);
+		ctx.strokeText('Sep', 425, 470);
+		ctx.strokeText('Oct', 462.5, 470);
+		
 		
 		//Write graph key: temperature
 		ctx.font = '10px arial';
+		
+		//In the next lines I tried to create two loops to label the vertical axis, but the results were very blurry so I had to write it manually.
+		//Could you please help me see what is wrong?
+		//for (i = 10; i < 460; i += 50){
+			//for(j = 350; j > -100; j -= 50){
+				//ctx.strokeText(j, 10, i);
+			//}
+		//}
 		ctx.strokeText('350', 10, 10);
 		ctx.strokeText('300', 10, 60);
 		ctx.strokeText('250', 10, 110);
