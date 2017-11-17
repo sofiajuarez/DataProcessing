@@ -1,0 +1,54 @@
+/* Sofia Juarez Rodriguez
+10689184
+Homework 3 Dataprocessing */
+
+html, body,.output{
+	width:100%;
+	height:100%;
+	margin:0;
+	padding: 0;
+}
+svg{
+	margin, padding: 0;
+	position: absolute;
+	left: 0;
+	transform-origin: 0 0;
+}
+.barpurple{
+	fill: purple;
+}
+.barblue{
+	fill: blue;
+	}
+.barred{
+	fill: red;
+}
+.bar:hover {
+	fill: black;
+}
+.barorange{
+	fill: orange;
+}
+.bargreen{
+	fill: green;
+}
+h1{
+	text-align: center;
+	text-decoration: underline;
+}
+.tooltip {
+	position: absolute;
+	text-align: center;
+	width: 60px;
+	height: 20px;
+	margin-top: -20px;
+	font: 20px sans-serif;
+	background: #ddd;
+	color: black;
+	pointer-events: none;
+	
+}
+.key{
+	font-size: 1.5em;
+	margin: 0 0 1% 25%;
+}
