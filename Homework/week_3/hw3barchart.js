@@ -7,8 +7,8 @@
 d3.json("hw3data.json", function(jsondata) {
 	
 	/* Create an object that is the selection of the html element that will contain the graph */
-  	var svg = d3.select("div.output svg")
-	var selection = svg.selectAll("rect")
+  	var svg = d3.select("div.output svg");
+	var selection = svg.selectAll("rect");
 	
 //------------------------DRAW BARS--------------------------------------------------------------------
 	
@@ -58,13 +58,13 @@ d3.json("hw3data.json", function(jsondata) {
 		.range([0,274])
 		.domain([-3.8, 23.6])
 	
-	var g = svg.append("g")	
+	var g = svg.append("g")
 		/*Write axis(axises?)*/
 		g.append("g")
 			.attr("class", "xaxis")
-			.call(d3.axisBottom(x));
+			.call(d3.axisBottom(x))
 		g.append("g")
-			.attr("class", "yaxis") 
+			.attr("class", "yaxis")
 			.call(d3.axisLeft(y))
 		.append("text")
 		/*Rotate text on y axis 90 degrees*/
@@ -77,7 +77,7 @@ d3.json("hw3data.json", function(jsondata) {
 	/*Create a div element but make it invisible*/
 	var div = d3.select("body").append("div")
 		.attr("class", "tooltip")
-		.style("display", "none");
+		.style("display", "none")
 	
 	/*Display tooltip when hovering on bar*/
 	function mouseover() {
@@ -90,12 +90,12 @@ d3.json("hw3data.json", function(jsondata) {
 		  .text(data.Temperature/10)
 		  /*Position text with respect to mouse*/
 		  .style("left", (d3.event.pageX - 34) + "px")
-		  .style("top", (d3.event.pageY - 12) + "px");
+		  .style("top", (d3.event.pageY - 12) + "px")
 	}
 	
 	/*Hide tooltip when mouse is removed from bar*/
 	function mouseout() {
-		div.style("display", "none");
+		div.style("display", "none")
 	}
 
 });
