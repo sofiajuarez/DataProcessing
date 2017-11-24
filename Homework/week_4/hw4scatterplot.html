@@ -1,0 +1,44 @@
+<!-- Sofia Juarez Rodriguez
+10689184
+Homework 4 Dataprocessing -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Homework 4 </title>
+	<link href="hw4scatterplot.css" rel="stylesheet" type="text/css">
+	<meta name="author" content="Sofia Juarez Roriguez">
+	<meta charset="utf-8">
+	
+	<!-- Source: https://d3js.org/ , version of 22.11.2017 
+	IMPORTANT NOTE: If I don't use any of these libraries, I will get an error saying my functions don't exist-->
+	<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<script src="https://d3js.org/d3-axis.v1.min.js"></script>
+	<script src="https://d3js.org/d3-array.v1.min.js"></script>
+	<script src="https://d3js.org/d3-collection.v1.min.js"></script>
+	<script src="https://d3js.org/d3-color.v1.min.js"></script>
+	<script src="https://d3js.org/d3-format.v1.min.js"></script>
+	<script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
+	<script src="https://d3js.org/d3-time.v1.min.js"></script>
+	<script src="https://d3js.org/d3-time-format.v2.min.js"></script>
+	<script src="https://d3js.org/d3-scale.v1.min.js"></script>
+	<script src="https://d3js.org/d3-selection.v1.min.js"></script>
+	<script src="hw4scatterplot.js"></script>
+</head>
+
+<body>
+
+	<h2>Temperature vs latitude of European cities on November the 22nd 2017</h2>
+	<div class = "metainfo">
+		<p>Sofia Juarez Rodriguez, 10689184</p>
+		<p class = "sources">Source latitudes: http://techslides.com/list-of-countries-and-capitals</p>
+		<p class = "sources">Source temperatures: https://www.accuweather.com/en/europe-weather</p>
+		<p class = "sources">Source populations: http://www.worldatlas.com/capcitys.htm</p></div>
+
+	<div class="output">
+		<!-- Create svg element where plot is going to be displayed -->
+		<svg max-width="100vw" max-height="100vh" viewBox="-60 0 600 4000" overflow="visible"></svg>
+	</div>
+</body>
+</html>

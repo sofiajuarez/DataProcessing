@@ -1,0 +1,15 @@
+/* Sofia Juarez Rodriguez
+10689184
+Homework 4 Data Processing */
+
+
+/*Fill each key with color*/
+#kleur1{fill: #99d8c9;}
+#kleur2{fill: #ccece6}
+#kleur3{fill: #66c2a4;}
+#tekst2{fill: #41ae76;}
+#tekst3{fill: #238b45;}
+#tekst4{fill: #005824;}
+#tekst1{fill: grey;}
+/*Don't show biggest square*/
+#canvas{display: none;}
