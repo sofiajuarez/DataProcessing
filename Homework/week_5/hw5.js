@@ -16,16 +16,12 @@ function popupCenter(url, title, w, h) {
 /*Use d3 library and import data from json file*/
 d3.json("hw5data.json", function(error, jsondata){
 
-	//Error checking
+/* 	Error checking */
 	if (error) throw error;
-	
-	var formatTime = d3.timeFormat("%Y"); // "June 30, 2015"
 
-/* 	Define used variables */
+/*Define used variables */
 	var width = 300;
 	var height = 200;
-/* 	var minyear = formatTime(2006);
-	var maxyear = formatTime(2016); */
 	var minyear = 2006;
 	var maxyear = 2016;
 	var mingdp = 0;
@@ -33,7 +29,7 @@ d3.json("hw5data.json", function(error, jsondata){
 	
 //---------------------------SCATTERED POINTS------------------------------------------------
 
-/* 	Draw lines on graph. First scale data points out, then set them on svg element.*/	
+/*Draw lines on graph. First scale data points out, then set them on svg element.*/	
 	var x = d3.scale.linear()
 		.domain([minyear, maxyear])
 		.range([ 0, width]);
@@ -49,7 +45,7 @@ d3.json("hw5data.json", function(error, jsondata){
 	
 	var svg = d3.select("div.output svg");
 	
-	/* Create function that retrieves the country name from the data and passes it on to the plot function */
+/* Create function that retrieves the country name from the data and passes it on to the plot function */
 	function getDataForCountry(data, countryName) {
 		var result = []
 		for (var i = 0; i < data.length; i++) {
@@ -72,7 +68,7 @@ d3.json("hw5data.json", function(error, jsondata){
 			.on("mouseout", mouseout)
 	}	
 
-	/* Plot four countries */
+/* Plot four countries */
 	plotCountry("ESP")
 	plotCountry("MEX")
 	plotCountry("LUX")
@@ -81,7 +77,7 @@ d3.json("hw5data.json", function(error, jsondata){
 
 //-------------------------------------AXIS------------------------------------------------------------
 	
-/* 	Draw axis, first scaling them and then appending them to a new 'g' element. Make sure to rotate direction y- axis/label. */
+/*Draw axis, first scaling them and then appending them to a new 'g' element. Make sure to rotate direction y- axis/label. */
 	var xaxis = d3.scaleTime()
 		.range([ 0, width])
 		.domain([new Date(minyear,0,1), new Date(maxyear,0,1)])
@@ -105,7 +101,7 @@ d3.json("hw5data.json", function(error, jsondata){
 			.attr("transform", "rotate(-90)")
 			.attr("text-anchor", "end")
 	
-	//Write labels.
+/*Write labels. */
 	var xlabel = svg.append("text")
 		.attr("x", width/2)
 		.attr("y", height + 30)
@@ -123,7 +119,7 @@ d3.json("hw5data.json", function(error, jsondata){
 
 //---------------------------------------TOOLTIP-------------------------------------------
 
-/* 	Create tooltips, one displaying the location (div1) and another giving coordinates of data point(div2). */
+/*Create tooltips, one displaying the location (div1) and another giving coordinates of data point(div2). */
 	var div1 = d3.select("body").append("div")
 		.attr("class", "tooltip1")
 		.style("display", "none")
@@ -139,7 +135,7 @@ d3.json("hw5data.json", function(error, jsondata){
 		div2.style("display", "inline")
 	}
 	
-	/* Whereas the x.invert function works, the y.invert showed negative numbers due to the direction of the y axis (from bigger to smaller numbers). Therefore I have created a new y2 variable where the direction has been reversed. It still shows a very strange number, but at least not negative. */
+/* Whereas the x.invert function works, the y.invert showed negative numbers due to the direction of the y axis (from bigger to smaller numbers). Therefore I have created a new y2 variable where the direction has been reversed. It still shows a very strange number, but at least not negative. */
 	var y2 = d3.scale.linear()
 	.domain([mingdp, maxgdp])
 	.range([0,height])
@@ -150,7 +146,6 @@ d3.json("hw5data.json", function(error, jsondata){
 		  .text(this.id)
 		  .style("left", (d3.event.pageX - 34) + "px")
 		  .style("top", (d3.event.pageY - 12) + "px")    
-	
 	div2
 		  .text(Math.trunc(x.invert(d3.mouse(this)[0])) + ", " + y2.invert(d3.mouse(this)[0]))
 		  .style("left", (d3.event.pageX - 34) + "px")
