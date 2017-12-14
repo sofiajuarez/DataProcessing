@@ -15,63 +15,63 @@ html, body{
 }
 
 .aa{
-  width: 100%;
-  text-align: center;
-  border-bottom: 2px solid black;
-  border-top: 2px solid black;
-  padding: 12px 0 12px 0;
+	width: 100%;
+	text-align: center;
+	border-bottom: 2px solid black;
+	border-top: 2px solid black;
+	padding: 12px 0 12px 0;
 }
 
 .ab{ 
-margin-top: 1%;
-text-align: center;
-word-spacing: 12px;
-  color: #565252;
-  font-size: 1em;
+	margin-top: 1%;
+	text-align: center;
+	word-spacing: 12px;
+	color: #565252;
+	font-size: 1em;
 }
 
 
 p{
-  color: black;
-  width: 25%;
-  padding: 1%;
+	color: black;
+	width: 25%;
+	padding: 1%;
 }
 
-#article{
+.article{
 	border-right: 1px solid black;
 }
 
 .float{
-  margin-top: 3%;
-  margin-bottom: 10%;
-  float: left;
-  margin-left: 10px;
+	margin-top: 3%;
+	margin-bottom: 10%;
+	float: left;
+	margin-left: 10px;
 }
 .clear{
-  clear: left;
+	clear: left;
 
 }
 #header{
-font-family: 'Diplomata', cursive;
-  text-transform: uppercase;
-  display: block;
-  margin: 20px auto;
-  text-align:center;
-  font-weight:bolder;
-  font-size: 4em;
+	font-family: 'Diplomata', cursive;
+	text-transform: uppercase;
+	display: block;
+	margin: 20px auto;
+	text-align:center;
+	font-weight:bolder;
+	font-size: 4em;
 }
 #sub{
-  text-transform: uppercase;
-  width: 100%;
-  display: block;
-  margin: 10px auto;
-  text-align: center;
+	text-transform: uppercase;
+	width: 100%;
+	display: block;
+	margin: 10px auto;
+	text-align: center;
 }
 p > span{
-  font-style: italic;
-  display:block;
-  color: #565252;
-  font-size: 25px;
+	font-style: italic;
+	display:block;
+	color: #565252;
+	font-size: 25px;
 }
 
 #formula{
@@ -83,33 +83,33 @@ p > span{
 }
 
 .headline1{
-  padding-bottom: 10px;
-  font-style: normal;
-  font-weight: 600;
+	padding-bottom: 10px;
+	font-style: normal;
+	font-weight: 600;
 }
 
 .citation{
-  border-top-right-radius: 5px;
-  display: block;
-  text-align: center;
-  width: 75%;
-  padding: 12px 0;
-  font-family: 'Playfair Display SC', serif;
-  font-weight: bold;
+	border-top-right-radius: 5px;
+	display: block;
+	text-align: center;
+	width: 75%;
+	padding: 12px 0;
+	font-family: 'Playfair Display SC', serif;
+	font-weight: bold;
 
 }
 .clear{
-  width: 100%;
-  margin: 5% 0;
-  text-align: center;
-  border-bottom: 2px solid black;
-  border-top: 2px solid black;
-  padding: 12px 0 12px 0;
- }
+	width: 100%;
+	margin: 5% 0;
+	text-align: center;
+	border-bottom: 2px solid black;
+	border-top: 2px solid black;
+	padding: 12px 0 12px 0;
+}
 
 img{
-  display: inline-block;
-  width: 100%;
+	display: inline-block;
+	width: 100%;
 }
 
 #economy{
@@ -139,11 +139,11 @@ svg{
 	left: 0;
 	transform-origin: 0 0;
 }
- 
+
 .line {
-  fill: none;
-  stroke: steelblue;
-  stroke-width: 3px;
+	fill: none;
+	stroke: steelblue;
+	stroke-width: 3px;
 }
 
 
@@ -188,22 +188,19 @@ h3{
 }
 
 .infobutton{
-  background-color: black ;
-  color: white ;
-  font-weight: bolder;
-  position: absolute;
+	background-color: black ;
+	color: white ;
+	font-weight: bolder;
+	position: absolute;
 }
-#list{
 
-	margin-left: 25%;
-}
 #bg{
-	  background-image: url('https://www.sbs.com.au/topics/sites/sbs.com.au.topics/files/20160115001218617363-drupal.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
+	background-image: url('https://www.sbs.com.au/topics/sites/sbs.com.au.topics/files/20160115001218617363-drupal.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 #bg2{
-	  background-image: url('https://www.nicva.org/sites/default/files/d7content/article-images/CITY%20SCAPE_0_0.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
+	background-image: url('https://www.nicva.org/sites/default/files/d7content/article-images/CITY%20SCAPE_0_0.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
 }

@@ -4,7 +4,7 @@
 
 
 
-/*Use d3 library and import data from json file*/
+//Use d3 library and import data from json file.
 d3.json("hw6government_consumption.json", function(error, jsondata){
 
 	//Error checking

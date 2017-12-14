@@ -1,15 +1,6 @@
 <!-- Sofia Juarez Rodriguez
 10689184
-Homework 6 Dataprocessing -->
-
-
-<!-- USE VALIDATOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOR!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-https://validator.w3.org/
-
-Also: divide whole final project in folders (style folder, js folder, html folder, data folder...)
-Comment css and html
-Liever camelCase with js
- -->
+Final Project Dataprocessing -->
 
 
 <!DOCTYPE html>
@@ -36,7 +27,6 @@ Liever camelCase with js
 	<script src="https://d3js.org/d3-path.v1.min.js"></script>
 	<script src="https://d3js.org/d3-shape.v1.min.js"></script>
 	<script src="http://d3js.org/queue.v1.min.js"></script>
-<!-- 	<script src="hw6popup.js"></script> -->
 </head>
 
 <body>
@@ -53,11 +43,13 @@ Liever camelCase with js
 	
 	
 	<script>
+	
+	//Code from: https://stackoverflow.com/questions/979975/how-to-get-the-value-from-the-get-parameters#1099670
 	var params = {};
-
+	
+	//This allows to split url in useful parts.
 	if (location.search) {
 		var parts = location.search.substring(1).split('&');
-
 		for (var i = 0; i < parts.length; i++) {
 			var nv = parts[i].split('=');
 			if (!nv[0]) continue;
@@ -69,7 +61,8 @@ Liever camelCase with js
 //-------------------------------BARS----------------------------------------------------------------------------
 	
 	var svg = d3.select("div.output svg")
-
+	
+	//Create bars.
 	svg.selectAll("rect")
 	  .data([params.imports, params.exports, params.government_consumption, params.private_consumption, params.private_investment])
 	  .enter().append("rect")
@@ -82,30 +75,25 @@ Liever camelCase with js
 	
 //--------------------------------LEGEND-----------------------------------------------------------------------
 	
-	//Create element and append text & squares to it to create color legend.
+	//Create element and append text.
 	var legend = svg.append("g");
 	var key = svg.selectAll("g");
 	key
-			.append("text")
-			.attr("x", 200/2)
-			.attr("y", 85/2)
-			.text("Country Code, Year: "+params.countryName+", "+params.year)
-			.attr("font-family", "sans-serif")
-			.attr("font-size", "5px")
-			.attr("fill", "black")	
+		.append("text")
+		.attr("x", 200/2)
+		.attr("y", 85/2)
+		.text("Country Code, Year: "+params.countryName+", "+params.year)
+		.attr("font-family", "sans-serif")
+		.attr("font-size", "5px")
+		.attr("fill", "black")	
 			
 			
 //----------------------AXIS-------------------------------------------------------------------------------------		
-
-	/*Create axis: y is scaled in time and x in length*/
-
+	
+	//First scale axis out, then append them to svg element.
 	var x = d3.scaleLinear()
-		/*Scale axis from lowest x position to biggest one, correspoding to the lowest and highest temperature resp.*/
 		.range([0,250])
 		.domain([0,250])
-	//var y = d3.scaleLinear()
-		/*Scale axis from lowest x position to biggest one, correspoding to the lowest and highest temperature resp.*/
-		//.range([10,85])
 
 	var y = d3.scaleBand()
 		.domain(['Imports', 'Exports', 'Government Consumption', 'Private Consumption', 'Private Investment'])
@@ -113,7 +101,6 @@ Liever camelCase with js
 		.paddingInner(0.05)
 		
 	var g = svg.append("g")
-		/*Write axis(axises?)*/
 		g.append("g")
 			.attr("class", "xaxis")
 			.call(d3.axisBottom(x))
@@ -124,19 +111,17 @@ Liever camelCase with js
 			.call(d3.axisLeft(y))
 			.attr("font-size", "0.2em")
 		.append("text")
-		/*Rotate text on y axis 90 degrees*/
+		//Rotate text on y axis 90 degrees
 			.attr("transform", "rotate(-90)")
 			.attr("text-anchor", "end")
 			
-/*Write labels. */
+	//Write x axis label.
 	var xlabel = svg.append("text")
 		.attr("x", 200/2)
 		.attr("y", 85 + 20)
 		.style("text-anchor", "middle")
 		.text("% of GDP")
-		.attr("font-size", "0.4em")
-			
-	
+		.attr("font-size", "0.4em")	
 	</script>
 
 </body>

@@ -1,13 +1,12 @@
 /* Sofia Juarez Rodriguez
 	10689184
-	Homework 6 Data Processing */
+	Final Project Data Processing */
 
 
 //Sources: http://databank.worldbank.org/data/home.aspx , 06.12.17 at 11am
 
 
-/*Use d3 library and import data from json file*/
-
+//Use d3 library and import data from json file
 queue()
 	.defer(d3.json, 'hw5data.json')
 	.defer(d3.json, 'hw6exports.json')
@@ -19,23 +18,21 @@ queue()
 
 function drawGraph(error, data, exports, imports, private_consumption, private_investment, government_consumption){
 
-	/* 	Error checking */
+	//Error checking.
 	if (error) throw error;
 
-	/*Define used variables */
-
+	//Define used variables.
 	var width = 300;
 	var height = 200;
 	var minyear = d3.min(data, function(d) { return d.time;});
 	var maxyear = d3.max(data, function(d) { return d.time; });
 	var mingdp = 0;
 	var maxgdp = 120000;
-	
-	/* 	Note: d3.min(data, function(d) { return d.value; }) works (it gives me the smallest value of the data) but d3.max(data, function(d) { return d.value; }) gives me a random value. I have asked but they don't know why! That's why I have to hardcode the value myself. */
+	//Note: d3.min(data, function(d) { return d.value; }) works (it gives me the smallest value of the data) but d3.max(data, function(d) { return d.value; }) gives me a random value. I have asked but they don't know why! That's why I have to hardcode the value myself.
 
-//---------------------------LINES------------------------------------------------
+//---------------------------------LINES------------------------------------------------
 
-/*Draw lines on graph. First scale data points out, then set them on svg element.*/	
+	//Draw lines on graph. First scale data points out, then set them on svg element.
 	var x = d3.scale.linear()
 		.domain([minyear, maxyear])
 		.range([ 0, width]);
@@ -51,7 +48,7 @@ function drawGraph(error, data, exports, imports, private_consumption, private_i
 	
 	var svg = d3.select("div.output svg");
 	
-/* Create function that retrieves the country name from the data and passes it on to the plot function */
+	//Create function that retrieves the country name from the data and passes it on to the plot function.
 	function getDataForCountry(data, countryName) {
 		var result = []
 		for (var i = 0; i < data.length; i++) {
@@ -67,7 +64,8 @@ function drawGraph(error, data, exports, imports, private_consumption, private_i
 				return data[i]
 		}
 	}
-
+	
+	//Create function to plot line chart.
 	function plotCountry(countryName)	
 	{
 		var selection = svg.append("path");
@@ -82,7 +80,7 @@ function drawGraph(error, data, exports, imports, private_consumption, private_i
 	}	
 
 	
-/* Plot four countries */
+	//Plot four countries.
 	plotCountry("MEX")
 	plotCountry("LUX")
 	plotCountry("NLD")
@@ -90,7 +88,8 @@ function drawGraph(error, data, exports, imports, private_consumption, private_i
 
 
 //--------------------------------------------POP-UP----------------------------------------------------
-
+	
+	//Write function to retrieve desire information from the different databases.
 	function getDetailedDataForCountryAndYear(data, location, year){
 		for (var i = 0; i < data.length; i++){
 			if (location == data[i].location){
@@ -98,7 +97,8 @@ function drawGraph(error, data, exports, imports, private_consumption, private_i
 		}
 		return desiredValue
 	}
-
+	
+	//The popup will appear when clicking on a certain point of the line chart, showing information from that point.
 	function popupCenter(url, title, w, h) {
 		var left = (screen.width/2)-(w/2);
 		var top = (screen.height/2)-(h/2);
@@ -109,7 +109,7 @@ function drawGraph(error, data, exports, imports, private_consumption, private_i
 	
 //-------------------------------------AXIS------------------------------------------------------------
 	
-/*Draw axis, first scaling them and then appending them to a new 'g' element. Make sure to rotate direction y- axis/label. */
+	//Draw axis, first scaling them and then appending them to a new 'g' element. Make sure to rotate direction y- axis/label.
 	var xaxis = d3.scaleTime()
 		.range([ 0, width])
 		.domain([new Date(minyear,0,1), new Date(maxyear,0,1)])
@@ -133,7 +133,7 @@ function drawGraph(error, data, exports, imports, private_consumption, private_i
 			.attr("transform", "rotate(-90)")
 			.attr("text-anchor", "end")
 	
-/*Write labels. */
+	//Write labels.
 	var xlabel = svg.append("text")
 		.attr("x", width/2)
 		.attr("y", height + 30)
@@ -149,7 +149,7 @@ function drawGraph(error, data, exports, imports, private_consumption, private_i
 		.text("GDP per capita")
 		.attr("font-size", "10px")
 		
-	//Create element and append text & squares to it to create color legend.
+	//Instructions.
  	var legend = svg.append("g");
 	legend
 		.append("text")
@@ -164,7 +164,7 @@ function drawGraph(error, data, exports, imports, private_consumption, private_i
 
 //---------------------------------------TOOLTIP-------------------------------------------
 
-/*Create tooltips, one displaying the location (div1) and another giving coordinates of data point(div2). */
+	//Create tooltips, one displaying the location (div1) and another giving coordinates of data point(div2).
 	var div1 = d3.select("body").append("div")
 		.attr("class", "tooltip1")
 		.style("display", "none")
@@ -174,27 +174,23 @@ function drawGraph(error, data, exports, imports, private_consumption, private_i
 	
 	function coordinates(){return d3.mouse(this);}
 
-	
 	function mouseover() {
 		div1.style("display", "inline")
 		div2.style("display", "inline")
-	}
-	
-/* Whereas the x.invert function works, the y.invert showed negative numbers due to the direction of the y axis (from bigger to smaller numbers). Therefore I have created a new y2 variable where the direction has been reversed. It still shows a very strange number, but at least not negative. */
-	
+	}	
 	
 	function mousemove() 
 	{
-	div1
-		  .text(this.id)
-		  .style("left", (d3.event.pageX - 34) + "px")
-		  .style("top", (d3.event.pageY - 34) + "px") 
-	var yearToShow = Math.trunc(x.invert(d3.mouse(this)[0]))
-	
-	div2
-		  .text(yearToShow + ", " + getDataForCountryAndYear(data, yearToShow, this.id).value)
-		  .style("left", (d3.event.pageX - 200) + "px")
-		  .style("top", (d3.event.pageY + 10) + "px")
+		div1
+			  .text(this.id)
+			  .style("left", (d3.event.pageX - 34) + "px")
+			  .style("top", (d3.event.pageY - 34) + "px") 
+		var yearToShow = Math.trunc(x.invert(d3.mouse(this)[0]))
+		
+		div2
+			  .text(yearToShow + ", " + getDataForCountryAndYear(data, yearToShow, this.id).value)
+			  .style("left", (d3.event.pageX - 200) + "px")
+			  .style("top", (d3.event.pageY + 10) + "px")
 	}
 	
 	function mouseout() {
