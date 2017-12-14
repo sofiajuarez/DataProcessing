@@ -21,7 +21,7 @@ Comment css and html
 		<meta name="author" content="Sofia Juarez Rodriguez">
 		<meta name="robots" content="index, follow">
 		<title> Final Project </title>
-		<link href="https://meyerweb.com/eric/tools/css/reset/reset.css" rel="stylesheet" type="text/css">
+		<link href="http://meyerweb.com/eric/tools/css/reset/reset.css" rel="stylesheet" type="text/css">
 		<link href="hw6.css" rel="stylesheet" type="text/css">
 		<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC" rel="stylesheet">
@@ -42,6 +42,7 @@ Comment css and html
 		<script src="https://d3js.org/d3-selection.v1.min.js"></script>
 		<script src="https://d3js.org/d3-path.v1.min.js"></script>
 		<script src="https://d3js.org/d3-shape.v1.min.js"></script>
+		<script src="https://d3js.org/d3-queue.v3.min.js"></script>
 		<script src="http://d3js.org/queue.v1.min.js"></script>
 		<script src="hw6.js"></script>
 		
@@ -69,18 +70,9 @@ Comment css and html
 			<p id="article" class="float"> GDP can be determined in three ways, all of which should, in principle, give the same result. They are the production (or output or value added) approach, the income approach, or the expenditure approach. The last approach calculates the sum of the final uses of goods and services (all uses except intermediate consumption) measured in purchasers' prices.
 			<span class="citation">The GDP is a monetary measure of the market value of all final goods and services produced in a period of time</span>
 			In this case GDP (Y) is: <span id="formula">Y = C + I + G + (X − M),</span> where C is the <a href="hw6pc.html">private consumption</a>, I the <a href="hw6pi.html">private investment</a>, G the <a href="hw6gc.html">government consumption</a>, X the <a href="hw6e.html">exports</a> and M the <a href="hw6i.html">imports</a>.
-			<span class="sources"> Sources: http://databank.worldbank.org/data/home.aspx, https://en.wikipedia.org/wiki/Gross_domestic_product </span><!-- </p>
-			<p id="list"> More information on...
-			<ul id="list">
-			<li></li>
-			<li><a href="hw6pi.html">Private Investment</a></li>
-			<li><a href="hw6gc.html">Government Consumption</a></li>
-			<li><a href="hw6e.html">Exports</a></li>
-			<li><a href="hw6i.html">Imports</a></li>
-			</ul></p> -->
+			<span class="sources"> Sources: http://databank.worldbank.org/data/home.aspx, https://en.wikipedia.org/wiki/Gross_domestic_product </span>
 		</div>
 
-		
 		<div class="output">
 			<!-- Create svg element where plot is going to be displayed -->
 			<svg max-width="100vw" max-height="100vh" viewBox="-100 -100 600 4000" overflow="visible"><path /></svg>
