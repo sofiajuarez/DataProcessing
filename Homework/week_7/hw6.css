@@ -1,0 +1,209 @@
+/* Sofia Juarez Rodriguez
+10689184
+Final Project Data Processing
+ */
+ 
+html, body{
+	width:100%;
+	height:100%;
+	margin:0;
+	padding: 0;
+	font-weight: bold;
+	font-family: 'Lora', serif;
+	margin: 0 auto;
+	color: black;
+}
+
+.aa{
+  width: 100%;
+  text-align: center;
+  border-bottom: 2px solid black;
+  border-top: 2px solid black;
+  padding: 12px 0 12px 0;
+}
+
+.ab{ 
+margin-top: 1%;
+text-align: center;
+word-spacing: 12px;
+  color: #565252;
+  font-size: 1em;
+}
+
+
+p{
+  color: black;
+  width: 25%;
+  padding: 1%;
+}
+
+#article{
+	border-right: 1px solid black;
+}
+
+.float{
+  margin-top: 3%;
+  margin-bottom: 10%;
+  float: left;
+  margin-left: 10px;
+}
+.clear{
+  clear: left;
+
+}
+#header{
+font-family: 'Diplomata', cursive;
+  text-transform: uppercase;
+  display: block;
+  margin: 20px auto;
+  text-align:center;
+  font-weight:bolder;
+  font-size: 4em;
+}
+#sub{
+  text-transform: uppercase;
+  width: 100%;
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+}
+p > span{
+  font-style: italic;
+  display:block;
+  color: #565252;
+  font-size: 25px;
+}
+
+#formula{
+	font-size: 1em;
+	font-style: normal;
+	display: block;
+	color: black;
+	font-weight: bold;
+}
+
+.headline1{
+  padding-bottom: 10px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.citation{
+  border-top-right-radius: 5px;
+  display: block;
+  text-align: center;
+  width: 75%;
+  padding: 12px 0;
+  font-family: 'Playfair Display SC', serif;
+  font-weight: bold;
+
+}
+.clear{
+  width: 100%;
+  margin: 5% 0;
+  text-align: center;
+  border-bottom: 2px solid black;
+  border-top: 2px solid black;
+  padding: 12px 0 12px 0;
+ }
+
+img{
+  display: inline-block;
+  width: 100%;
+}
+
+#economy{
+	display: inline-block;
+	width: 20%;
+	padding-right: 3px;
+}
+
+.ad{
+	position: relative;
+	width: 30%;
+	margin-top: 20%;
+	margin-left: 30%;
+}
+
+.output{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	margin-top: 40%;
+	padding-bottom: 5px;
+	padding-left: 50px;
+}
+
+svg{
+	position: absolute;
+	left: 0;
+	transform-origin: 0 0;
+}
+ 
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 3px;
+}
+
+
+/* Customize tooltips */
+.tooltip1{
+	position: absolute;
+	text-align: center;
+	margin-top: -20px;
+	width: 75px;
+	font: 20px sans-serif;
+	background: black;
+	color: white;
+	pointer-events: none;
+}
+.tooltip2 {
+	position: absolute;
+	width: 200px;
+	text-align: center;
+	font: 20px sans-serif;
+	color: grey;
+	pointer-events: none;
+}
+
+h2, h3{
+	text-align: center;
+
+}
+h3{
+	border-right: none;
+	margin-left: 35%;
+	width: 100%;
+	padding: 0;
+	font-style: italic;
+}
+.sources{
+	font-size: 13px;
+	text-align: center;
+}
+
+#popup{
+	margin-top: 10%;
+}
+
+.infobutton{
+  background-color: black ;
+  color: white ;
+  font-weight: bolder;
+  position: absolute;
+}
+#list{
+
+	margin-left: 25%;
+}
+#bg{
+	  background-image: url('https://www.sbs.com.au/topics/sites/sbs.com.au.topics/files/20160115001218617363-drupal.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#bg2{
+	  background-image: url('http://www.nicva.org/sites/default/files/d7content/article-images/CITY%20SCAPE_0_0.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
