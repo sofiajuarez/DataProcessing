@@ -5,7 +5,7 @@
 
 
 //Use d3 library and import data from json file
-d3.json("hw6imports.json", function(error, jsondata){
+d3.json("https://github.com/sofiajuarez/DataProcessing/blob/master/Homework/week_7/data/hw6imports.json", function(error, jsondata){
 
 	//Error checking
 	if (error) throw error;
