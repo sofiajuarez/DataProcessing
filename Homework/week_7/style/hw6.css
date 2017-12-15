@@ -195,12 +195,12 @@ h3{
 }
 
 #bg{
-	background-image: url('background.jpg');
+	background-image: url('https://github.com/sofiajuarez/DataProcessing/blob/master/Homework/week_7/images/background.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 #bg2{
-	background-image: url('city.jpg');
+	background-image: url('https://github.com/sofiajuarez/DataProcessing/blob/master/Homework/week_7/images/city.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 }
