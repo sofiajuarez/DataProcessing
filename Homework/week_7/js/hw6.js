@@ -8,12 +8,12 @@
 
 //Use d3 library and import data from json file
 queue()
-	.defer(d3.json, 'hw5data.json')
-	.defer(d3.json, 'hw6exports.json')
-	.defer(d3.json, 'hw6imports.json')
-	.defer(d3.json, 'hw6private_consumption.json')
-	.defer(d3.json, 'hw6private_investment.json')
-	.defer(d3.json, 'hw6government_consumption.json')
+	.defer(d3.json, 'https://github.com/sofiajuarez/DataProcessing/blob/master/Homework/week_7/data/hw5data.json')
+	.defer(d3.json, 'https://github.com/sofiajuarez/DataProcessing/blob/master/Homework/week_7/data/hw6exports.json')
+	.defer(d3.json, 'https://github.com/sofiajuarez/DataProcessing/blob/master/Homework/week_7/data/hw6imports.json')
+	.defer(d3.json, 'https://github.com/sofiajuarez/DataProcessing/blob/master/Homework/week_7/data/hw6private_consumption.json')
+	.defer(d3.json, 'https://github.com/sofiajuarez/DataProcessing/blob/master/Homework/week_7/data/hw6private_investment.json')
+	.defer(d3.json, 'https://github.com/sofiajuarez/DataProcessing/blob/master/Homework/week_7/data/hw6government_consumption.json')
 	.await(drawGraph);
 
 function drawGraph(error, data, exports, imports, private_consumption, private_investment, government_consumption){
