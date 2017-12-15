@@ -1,0 +1,79 @@
+<!-- Sofia Juarez Rodriguez
+10689184
+Homework 6 Dataprocessing -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="About page Sofia Juarez">
+		<meta name="author" content="Sofia Juarez Rodriguez">
+		<meta name="robots" content="index, follow">
+		<title> Final Project </title>
+		<!-- Erase any previous css. -->
+		<link href="http://meyerweb.com/eric/tools/css/reset/reset.css" rel="stylesheet" type="text/css">
+		<link href="hw6.css" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Diplomata" rel="stylesheet">
+		
+		<!-- Source: https://d3js.org/ , version of 06.12.2017 
+		IMPORTANT NOTE: If I don't use any of these libraries, I will get an error saying my functions don't exist-->
+		<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+		<script src="https://d3js.org/d3-axis.v1.min.js"></script>
+		<script src="https://d3js.org/d3-array.v1.min.js"></script>
+		<script src="https://d3js.org/d3-collection.v1.min.js"></script>
+		<script src="https://d3js.org/d3-color.v1.min.js"></script>
+		<script src="https://d3js.org/d3-format.v1.min.js"></script>
+		<script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
+		<script src="https://d3js.org/d3-time.v1.min.js"></script>
+		<script src="https://d3js.org/d3-time-format.v2.min.js"></script>
+		<script src="https://d3js.org/d3-scale.v1.min.js"></script>
+		<script src="https://d3js.org/d3-selection.v1.min.js"></script>
+		<script src="https://d3js.org/d3-path.v1.min.js"></script>
+		<script src="https://d3js.org/d3-shape.v1.min.js"></script>
+		<script src="http://d3js.org/queue.v1.min.js"></script>
+		<script src="hw6.js"></script>
+	</head>
+		
+	<body>
+		<div id="header">The Data Processing Times</div>
+		<p id="sub">Financial news for a beta public</p>
+		<div>
+			<div class="aa"> <span>UvA, Amsterdam. December 2017</span></div>
+			<div class="ab"> <span>
+				<a href="https://www.nytimes.com/section/world?WT.nav=page&action=click&contentCollection=World&module=HPMiniNav&pgtype=Homepage&region=TopBar">World</a>
+				<a href="https://www.nytimes.com/pages/politics/index.html?action=click&pgtype=Homepage&region=TopBar&module=HPMiniNav&contentCollection=Politics&WT.nav=page">Politics</a>
+				<a href="https://www.nytimes.com/pages/business/index.html">Business</a>
+				<a href="https://www.nytimes.com/pages/opinion/index.html">Opinion</a>
+				<a href="https://www.nytimes.com/pages/technology/index.html">Tech</a>
+				<a href="https://www.nytimes.com/section/science">Science</a>
+				<a href="https://www.nytimes.com/pages/health/index.html">Health</a></span>
+			</div>
+		</div>
+		<div>
+			<p class="article float"> <img class="float" id="economy" src="economy.png">
+			<span class="headline1">GDP: What is that exactly?</span>
+			Gross domestic product (GDP) is a monetary measure of the market value of all final goods and services produced in a period (quarterly or yearly) of time. Nominal GDP estimates are commonly used to determine the economic performance of a whole country or region, and to make international comparisons. Nominal GDP per capita does not, however, reflect differences in the cost of living and the inflation rates of the countries; therefore using a basis of GDP per capita at purchasing power parity (PPP) is arguably more useful when comparing differences in living standards between nations. </p>
+			<p class="article float">William Petty came up with a basic concept of GDP to defend landlords against unfair taxation during warfare between the Dutch and the English between 1652 and 1674. Charles Davenant developed the method further in 1695. The modern concept of GDP was first developed by Simon Kuznets for a US Congress report in 1934. In this report, Kuznets warned against its use as a measure of welfare (see below under limitations and criticisms). After the Bretton Woods conference in 1944, GDP became the main tool for measuring a country's economy. At that time gross national product (GNP) was the preferred estimate, which differed from GDP in that it measured production by a country's citizens at home and abroad rather than its 'resident institutional units' (see OECD definition above). The switch from "GNP" to "GDP" in the US was in 1991, trailing behind most other nations. Crucial to the development of GDP was its role in the wartime effort. A crucial role was played here by the US Department of Commerce under Milton Gilbert where ideas from Kuznets were embedded into governmental institutions.<img class="float" src="moneypic.jpg"></p>
+			<p class="article float"> GDP can be determined in three ways, all of which should, in principle, give the same result. They are the production (or output or value added) approach, the income approach, or the expenditure approach. The last approach calculates the sum of the final uses of goods and services (all uses except intermediate consumption) measured in purchasers' prices.
+			<span class="citation">The GDP is a monetary measure of the market value of all final goods and services produced in a period of time</span>
+			In this case GDP (Y) is: <span id="formula">Y = C + I + G + (X − M),</span> where C is the <a href="hw6pc.html">private consumption</a>, I the <a href="hw6pi.html">private investment</a>, G the <a href="hw6gc.html">government consumption</a>, X the <a href="hw6e.html">exports</a> and M the <a href="hw6i.html">imports</a>.
+			<span class="sources"> Sources: http://databank.worldbank.org/data/home.aspx, https://en.wikipedia.org/wiki/Gross_domestic_product </span>
+		</div>
+		<div class="output">
+			<!-- Create svg element where plot is going to be displayed -->
+			<svg max-width="100vw" max-height="100vh" viewBox="-100 -100 600 4000" overflow="visible"></svg>
+		</div>
+		<div>
+			<a href="https://www.facebook.com/"><img class="ad" src="fb.jpg"/></a>
+		</div>
+		<div class="clear">2017, S. Juarez Rodriguez, student no. 10689184. All rights reserved. 
+			<a href="https://en.wikipedia.org/wiki/Albert_Einstein"><button type="button" class="infobutton">About</button></a>
+		</div>
+	</body>
+
+</html>
+ 
