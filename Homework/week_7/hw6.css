@@ -195,12 +195,12 @@ h3{
 }
 
 #bg{
-	background-image: url('https://www.sbs.com.au/topics/sites/sbs.com.au.topics/files/20160115001218617363-drupal.jpg');
+	background-image: url('background.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 #bg2{
-	background-image: url('https://www.nicva.org/sites/default/files/d7content/article-images/CITY%20SCAPE_0_0.jpg');
+	background-image: url('city.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 }
