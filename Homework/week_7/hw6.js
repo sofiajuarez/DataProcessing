@@ -73,9 +73,9 @@ function drawGraph(error, data, exports, imports, private_consumption, private_i
 			.attr("class", "line")
 			.attr("id", countryName)
 			.attr("d", line(getDataForCountry(data, countryName)))
-			.on("mouseover", mouseover)
-			.on("mousemove", mousemove)
-			.on("mouseout", mouseout)
+			.on("mouseOver", mouseOver)
+			.on("mouseMove", mouseMove)
+			.on("mouseOut", mouseOut)
 			.on("click", popupCenter)
 	}	
 
@@ -174,12 +174,12 @@ function drawGraph(error, data, exports, imports, private_consumption, private_i
 	
 	function coordinates(){return d3.mouse(this);}
 
-	function mouseover() {
+	function mouseOver() {
 		div1.style("display", "inline")
 		div2.style("display", "inline")
 	}	
 	
-	function mousemove() 
+	function mouseMove() 
 	{
 		div1
 			  .text(this.id)
@@ -193,7 +193,7 @@ function drawGraph(error, data, exports, imports, private_consumption, private_i
 			  .style("top", (d3.event.pageY + 10) + "px")
 	}
 	
-	function mouseout() {
+	function mouseOut() {
 		div1.style("display", "none")
 		div2.style("display", "none")
 	}
